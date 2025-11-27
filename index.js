@@ -11,6 +11,11 @@ app.get("/", (req, res) => {
   res.send("ZUNITY AUTO-LOOP Server Running OK!");
 });
 
+// Test route
+app.get("/test", (req, res) => {
+  res.send("TEST OK");
+});
+
 // Shopify Webhook 엔드포인트
 app.use("/api/shopify", shopifyRoutes);
 
