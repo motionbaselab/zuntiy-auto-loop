@@ -1,7 +1,7 @@
-import express from "express";
-import crypto from "crypto";
-import bodyParser from "body-parser";
-import shopifyRoutes from "./routes/shopify.js";
+const express = require("express");
+const crypto = require("crypto");
+const bodyParser = require("body-parser");
+const shopifyRoutes = require("./routes/shopify.js");
 
 const app = express();
 app.use(bodyParser.json());
@@ -20,6 +20,6 @@ app.get("/test", (req, res) => {
 app.use("/api/shopify", shopifyRoutes);
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () =>
-  console.log(`🚀 Server running on port ${PORT}`)
-);
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
+});
