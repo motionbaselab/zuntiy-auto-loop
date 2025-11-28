@@ -1,3 +1,12 @@
+import { google } from 'googleapis';
+
+const auth = new google.auth.GoogleAuth({
+  credentials: JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON),
+  scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+});
+
+const sheets = google.sheets({ version: 'v4', auth });
+const SPREADSHEET_ID = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
 import express from "express";
 import bodyParser from "body-parser";
 import shopifyRoutes from "./routes/shopify.js";
